@@ -43,3 +43,5 @@ tech.on('connection', (socket) => {
         tech.emit('message', 'user disconnected');
     })
 })
+
+const db = require('./queries');
