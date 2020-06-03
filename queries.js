@@ -1,7 +1,9 @@
 const pg = require('pg');
 const precess_db = require('dotenv').config();
 const db_url = process.env.DATABASE_URL || process_db.parsed.DB_URL;
-const client = new pg.Client({
+const { Client } = require('pg')
+
+const client = new Client({
     connectionString: db_url,
     ssl: { rejectUnauthorized: false }
 });
