@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      .container {margin-left: 789px; margin-top: 54px;}
-      ul {  list-style-type: none; margin: 0;  padding: 0; overflow: hidden; }
-      ul li {float: left; }
-      .container h1 {font-size: 14px; color: white;}
-      #header { height: 109px;}
+    body {margin: 0; padding: 0;}
+    .container { background-color: #1F1F1F; width: 100%; height: 109px; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;}
+    ul {  list-style-type: none; margin: 0;  padding: 0; overflow: hidden; }
+    ul li {float: left; color: white; font-family: Arial, Helvetica, sans-serif;}
+    .edit {margin-left: 40.94%; margin-top: 54px;}
+    .new-message { margin-left: 4.84%; margin-top: 45px;}
+    .search { margin-left: 4.84%; margin-top: 54px;}
+    .container h1 {font-size: 14px; color: white;}
+    #header { height: 109px;}
     </style>
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid" id="header">
       <div class="container">
         <ul>
-          <li><i class="fa fa-edit"></i></li>
-          <li><h1 class="display-3">New messages</h1></li>
-          <li><i class="fa fa-search"></i></li>
+          <li class="edit"><i class="fa fa-edit"></i></li>
+          <li class="new-message"><h1 class="display-3">New messages</h1></li>
+          <li class="search"><i class="fa fa-search"></i></li>
         </ul>
       </div>
     </div>

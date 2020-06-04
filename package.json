@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js --exec",
-    "start-dev": "nodemon ./index.js --exec babel-node -e js",
+    "dev": "nodemon ./index.js --exec babel-node -e js",
     "test": "DEBUG=* nodemon ./index.js --exec babel-node -e js"
   },
   "author": "Emmanuel Henri",
