@@ -6,37 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    body {margin: 0; padding: 0;}
-    #header { background-color: #1F1F1F; width: 100%; height: 109px; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;}
-    ul {  list-style-type: none; margin: 0;  padding: 0; overflow: hidden; }
-    ul li {float: left; color: white; font-family: Arial, Helvetica, sans-serif;}
-    .edit {margin-left: 40.94%;}
-    .new-message { margin-left: 4.84%;  margin-top: 4px;}
-    .search { margin-left: 4.84%;}
-    .container h1 {font-size: 14px; color: white;}
-    #header { height: 109px;}
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid" id="header">
-      <div class="container">
-        <ul>
-          <li class="edit"><i class="fa fa-edit"></i></li>
-          <li class="new-message"><h1 class="display-3">New messages</h1></li>
-          <li class="search"><i class="fa fa-search"></i></li>
-        </ul>
-      </div>
+      <h1>Chatroom</h1>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="chat-list">
       <div class="row">
-        <ul class="list-group col">
+        <ul class="list-group col" id="chat-list-2">
           <a href="/javascript" class="list-group-item list-group-item-action">Javascript</a>
           <a href="/swift" class="list-group-item">Swift</a>
           <a href="/css" class="list-group-item">CSS</a>
         </ul>
       </div>
     </div>
+
+    <div class="row" id="footer">
+      <div class="col-lg-6">
+        <form action="">
+          <div class="input-group">
+              <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..." aria-label="Message...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit"><i class="fab fa-telegram-plane"></i></button>
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
