@@ -15,24 +15,19 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/javascript', (req, res) => {
-    res.sendFile(__dirname + '/public/chatroom.html');
+app.get('/*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/swift', (req, res) => {
-    res.sendFile(__dirname + '/public/chatroom.html');
-});
-
-app.get('/css', (req, res) => {
-    res.sendFile(__dirname + '/public/chatroom.html');
-});
 
 // tech namespace
 const tech = io.of('/tech');
 
+
 tech.on('connection', (socket) => {
     socket.on('join', (data) => {
         socket.join(data.room);
+
 
         db.getChats(data.room).then( val => {
             tech.to(socket.id).emit('historychats', val);
@@ -42,7 +37,7 @@ tech.on('connection', (socket) => {
     })
 
     socket.on('message', (data) => {
-        console.log(`message: ${data.msg}`);
+        // console.log(data);
 
         var message= {
             user: data.user, 

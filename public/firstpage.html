@@ -13,6 +13,13 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
+    <script>
+      function submit() {
+        var userName = document.getElementById("userinput").value;
+        localStorage.setItem("user", userName);
+      }
+
+    </script>
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid" id="header">
@@ -20,7 +27,8 @@
     </div>
 
     <div class="content">
-        <input type="text" placeholder="nickname"> <button><i class="fas fa-sign-in-alt"></i></button>
+
+        <input id="userinput" type="text" placeholder="nickname"> <button type="submit" onclick="submit()"><i class="fas fa-sign-in-alt"></i></button>
 
         <p>
             Here’s some information about this chat.<br>

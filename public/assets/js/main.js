@@ -9,7 +9,8 @@ if (isCurrentRoom) {
     const socket = io('/tech');
     $('form').submit(() => {
         let msg = $('#m').val();
-        let user = localStorage.getItem('username');
+        let user = localStorage.getItem('user');
+        console.log(user);
 
         socket.emit('message', {msg, room, user });
         $('#m').val('');
@@ -17,20 +18,27 @@ if (isCurrentRoom) {
     });
 
     socket.on('connect', () => {
-        let user = localStorage.getItem('userName');
+        let user = localStorage.getItem('user');
 
-        socket.emit('join', { room: room, user:user });
+        socket.emit('join', { room: room, user: user });
 
+    });
+    
+    socket.on("historychats", (data) => {
+      data.forEach(data => {
+        $('#messages').append($('<li class="other">').text(data.user_name+' '+data.chat_text));
+        console.log(data);
+      });
     });
 
 
     socket.on('message', (data) => {
-        let user = localStorage.getItem('userName');
+        let user = localStorage.getItem('user');
         console.log(data);
         if(user == data.user){
-            $('#messages').append($('<le class="mine">').text(data.msg+' _ '+data.user));
+            $('#messages').append($('<li class="mine">').text(data.user+' '+data.msg));
         }else{
-            $('#messages').append($('<le class="other">').text(data.msg+' _ '+data.user));
+            $('#messages').append($('<li class="other">').text(data.user+' '+data.msg));
         }
 
     });
@@ -40,7 +48,7 @@ if (isCurrentRoom) {
     });
 
     socket.on('historyChats', (data) => {
-        let user = localStorage.getItem('userName');
+        let user = localStorage.getItem('user');
 
         for(var i = 0; 1 , data.length; i++) {
             if(user == data[i].user_name){
@@ -53,6 +61,7 @@ if (isCurrentRoom) {
     });
 }
 
+
 $( document ).ready(function() {
     $('.room-name').text(roomName);
     var title = $('title').html();
@@ -62,7 +71,7 @@ $( document ).ready(function() {
         event.preventDefault();
         var userName = $('._userName',userName);
 
-        localStorage.setItem('userName',userName);
+        localStorage.setItem('user',userName);
 
         window.location.href = '/rooms';
     });

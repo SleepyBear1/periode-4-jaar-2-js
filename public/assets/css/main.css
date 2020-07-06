@@ -9,3 +9,6 @@ body {margin: 0; padding: 0;}
 .input-group input { width: 43.67%; margin-top: 25px;}
 .input-group button { background-color: #007EF4; color: white; border-radius: 50%; border-top-left-radius: 50%; left: -40px; top: 12px; position: relative;}
 #m { border-radius: 20px; background-color: #3C3C3C}
+.chat {width: 70.80%; float: right; height: 844px; margin-top: -30px; overflow-x: hidden; overflow-y: auto;}
+.other {width: 58.85%; padding: 20px; float: left; background-color: #2B2B2B; color: white; margin: 20px; border-radius: 15px 15px 15px 0px;}
+.mine {width: 58.85%; padding: 20px; float: right; background-color: #007EF4; color: white; margin: 20px; border-radius: 15px 15px 0px 15px;}
