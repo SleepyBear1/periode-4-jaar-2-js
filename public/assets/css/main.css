@@ -7,7 +7,7 @@ body {margin: 0; padding: 0;}
 #footer { background-color: #1F1F1F; width: 100%; height: 107px; border-top-left-radius: 25px; border-top-right-radius: 25px; z-index: 1;  margin-left: 0px; display: inline-block; margin-top: -22px;}
 .input-group { margin-left: 70.77%; }
 .input-group input { width: 43.67%; margin-top: 25px;}
-.input-group button { background-color: #007EF4; color: white; border-radius: 50%; border-top-left-radius: 50%; left: -40px; top: 12px; position: relative;}
+.input-group button { background-color: #007EF4; color: white; left: -15px; top: 12px; position: relative;}
 #m { border-radius: 20px; background-color: #3C3C3C}
 .chat {width: 70.80%; float: right; height: 844px; margin-top: -30px; overflow-x: hidden; overflow-y: auto;}
 .other {width: 58.85%; padding: 20px; float: left; background-color: #2B2B2B; color: white; margin: 20px; border-radius: 15px 15px 15px 0px;}
