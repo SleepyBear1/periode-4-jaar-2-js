@@ -1,1 +1,5 @@
 https://bjornvanzoelen-project.herokuapp.com/
+
+Het project is een chat app als je op een chat klikt kom je bij de chat waar je met meerdere mensen kan chatten het enige wat nog niet volledig werkt is de username invoeren.
+De developers moeten letten op de backend en hoe de chat is gecreeerd en de designers moeten letten op hoe het design is gemaakt.
+Om het project te runnen moet je in de terminal npm start -dev .
