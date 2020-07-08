@@ -3,48 +3,44 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
-    mode: 'development',
-    watch: true,
-    entry: { 
-        main: './src/main.js',
-    },
+    entry: ["./src/main.js", 
+    "./src/main.scss"],
     output: {
-        path: path.join(__dirname, 'public/assets'),
-        publicPath: '/',
+        path: path.resolve(__dirname, "public/assets"),
+        filename: "main.js",
+        publicPath: "/public"
     },
+    watch:true,
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                exclude: /(node_modules|bower_components)/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                      use: [{
-                        loader: 'css-loader',
-                        options: {
-                            url: false,
-                            sourceMap: true,
-                        }
-                    }, 
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        }
-                    }]
-                }),
+                test: /\.js$/,
+                use: {
+                    loader: "babel-loader",
+                }
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
+                test: /\.s?css$/,
+                use: [{
+                    
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                      publicPath: "/css/"
+                  },
+                },
+                  "css-loader",
+                  "sass-loader"
+                ]
             }
         ]
     },
     plugins: [
-        new webpack.WatchIgnorePlugin([path.join(__dirname, 'node_modules')]),
-        new ExtractTextPlugin('/css/[name].css'),
-        new OptimizeCssAssetsPlugin()
-    ],
-};
+        new MiniCssExtractPlugin({
+          filename: "[name].css",
+          chunkFilename: "[id].css"
+        })
+    ]
+}
